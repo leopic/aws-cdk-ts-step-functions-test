@@ -4,11 +4,6 @@ const timeout = (ms: number) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-const sleep = async (fn: Function, ...args: any) => {
-  await timeout(3000);
-  return fn(...args);
-};
-
 export const handler = async (event: ICase): Promise<ICase> => {
   // Generate a random number to determine whether the support case has been resolved, then return that value along with the updated message.
   const min = 0;
