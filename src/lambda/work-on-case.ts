@@ -15,7 +15,8 @@ export const handler = async (event: ICase): Promise<ICase> => {
 
   if (!Status) {
     console.log('Case failed, timing out...');
-    await timeout(6001);
+    throw new Error('Weird error');
+    // await timeout(6001);
   }
 
   return { Case, Status, Message };
